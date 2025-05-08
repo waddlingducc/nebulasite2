@@ -292,22 +292,22 @@
         </div>
 
         <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const gamesContainer = document.getElementById("games");
-            const gameElements = Array.from(gamesContainer.querySelectorAll("a"));
-            const adTemplate = document.getElementById("horizontal-ad-template").firstElementChild;
+document.addEventListener("DOMContentLoaded", function () {
+    const gamesContainer = document.getElementById("games");
+    const gameElements = Array.from(gamesContainer.querySelectorAll("a"));
+    const adTemplate = document.getElementById("horizontal-ad-template").firstElementChild;
 
-            let inserted = 0;
-            for (let i = 0; i < gameElements.length; i++) {
-                if ((i + 1) % 24 === 0) {
-                    const adClone = adTemplate.cloneNode(true);
-                    gamesContainer.insertBefore(adClone, gameElements[i + 1 + inserted]);
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    inserted++;
-                }
-            }
-        });
-        </script>
+    let inserted = 0;
+    for (let i = 0; i < gameElements.length; i++) {
+        if ((i + 1) % 15 === 0) { // Changed from 24 to 15
+            const adClone = adTemplate.cloneNode(true);
+            gamesContainer.insertBefore(adClone, gameElements[i + 1 + inserted]);
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            inserted++;
+        }
+    }
+});
+</script>
 
 </body>
 </html>
