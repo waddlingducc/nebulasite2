@@ -59,6 +59,12 @@ nav h3 {
     padding-top: 0vw;
 }
 
+@media (max-width: 969px) {
+    .bottom-ad {
+        display: none;
+    }
+}
+
 .content hr {
     border: 0;
     height: 4px;
