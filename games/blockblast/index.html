@@ -115,21 +115,21 @@
     </div>
 </div>
 
-<!-- Bottom Ad -->
-<div id="bottomAdContainer" class="bottom-ad">
-    <ins class="adsbygoogle"
-         data-ad-client="ca-pub-2366308143645027"
-         data-ad-format="horizontal"
-         data-ad-slot="9891545305"
-         data-full-width-responsive="true"
-         style="display:block"></ins>
-</div>
+<!-- Bottom Ad (only shows if height >= 700px) -->
+<div id="bottomAdContainer" class="bottom-ad"></div>
 
 <script>
-    if (window.innerWidth >= 970) {
+    if (window.innerHeight >= 700) {
+        const ad = document.createElement('ins');
+        ad.className = 'adsbygoogle';
+        ad.style.display = 'block';
+        ad.setAttribute('data-ad-client', 'ca-pub-2366308143645027');
+        ad.setAttribute('data-ad-slot', '9891545305');
+        ad.setAttribute('data-ad-format', 'horizontal');
+        ad.setAttribute('data-full-width-responsive', 'true');
+
+        document.getElementById('bottomAdContainer').appendChild(ad);
         (adsbygoogle = window.adsbygoogle || []).push({});
-    } else {
-        document.getElementById("bottomAdContainer").style.display = "none";
     }
 </script>
 </body>
